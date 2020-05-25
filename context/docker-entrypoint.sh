@@ -21,4 +21,4 @@ if [ -n "$GID" ]; then
     groupmod -g "$GID" envoy
 fi
 
-su-exec envoy "${@}"
+su-exec envoy ${@}
