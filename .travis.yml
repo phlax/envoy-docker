@@ -4,8 +4,8 @@ install:
 
 script:
   - docker run -ti phlax/envoy whoami | grep envoy
-  - docker run -ti  -e UID=223 -e GID=333 phlax/envoy id -u | grep 223
-  - docker run -ti  -e UID=223 -e GID=333 phlax/envoy id -g | grep 333
+  - docker run -ti  -e ENVOY_UID=223 -e ENVOY_GID=333 phlax/envoy id -u | grep 223
+  - docker run -ti  -e ENVOY_UID=223 -e ENVOY_GID=333 phlax/envoy id -g | grep 333
 
 before_deploy:
   - echo $DOCKER_API_TOKEN | docker login -u phlax --password-stdin

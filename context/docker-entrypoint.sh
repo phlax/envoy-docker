@@ -13,12 +13,12 @@ if [ "$1" = 'envoy' ]; then
     fi
 fi
 
-if [ -n "$UID" ]; then
-    usermod -u "$UID" envoy
+if [ -n "$ENVOY_UID" ]; then
+    usermod -u "$ENVOY_UID" envoy
 fi
 
-if [ -n "$GID" ]; then
-    groupmod -g "$GID" envoy
+if [ -n "$ENVOY_GID" ]; then
+    groupmod -g "$ENVOY_GID" envoy
 fi
 
 su-exec envoy ${@}
